@@ -1,5 +1,0 @@
-def domino(m,n):
-	area=m*n
-	dom=2
-	doms=area//2
-	return doms
