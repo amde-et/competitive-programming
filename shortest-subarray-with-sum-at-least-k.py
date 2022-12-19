@@ -1,19 +1,19 @@
 class Solution:
     def shortestSubarray(self, nums: List[int], k: int) -> int:
-        if (len(nums)>=1 and len(nums)<=100000) and (k>=1 and k<=1000000000):
+        while len(nums)>=1:
+            i=0
             size=0
             tmp=0
-            while len(nums)>=1:
-                for i in nums:
-                    if i>=-100000 and i<=100000:
-                        size+=1
-                        tmp+=i
-                        if tmp!=k:
-                            nums=nums[1:]
-                        else:
-                            break
-                        break
+            while i<(len(nums)):
+                size+=1
+                tmp+=nums[i]
+                if tmp == k:
+                    break
+                    break
+                else:
+                    i+=1
+            nums=nums[1:]
             if tmp==k:
                 return size
-            else:
-                return -1
+        return -1
+
